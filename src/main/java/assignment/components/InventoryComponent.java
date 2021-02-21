@@ -43,10 +43,10 @@ public class InventoryComponent extends Component
 			int value_after_use = inv.getAmount(item) - event.getAmount();
 			
 			if(value_after_use < 0 )
-            {
+            		{
 				event.setCancelled(true); // Not enough to consume what is required.
-                return;
-            }
+                		return;
+            		}
 
 			inv.removeItem(item);
 		}
