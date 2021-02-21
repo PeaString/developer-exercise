@@ -48,6 +48,8 @@ public class Assignment {
         //A remove all function exists in the inventory, this is just to show it handles values.
         registry.sendEvent(new ConsumeItemEvent (player, Item.PARTY_HAT, 1));
 
+        registry.sendEvent(new ConsumeItemEvent  (player, Item.MAGIC_MISSILE_SCROLL, 1)); // Attempt to remove nonexistant item
+
         registry.sendEvent(new ObtainItemEvent  (player, Item.FIREBALL_SCROLL, 1));
 
         registry.sendEvent(new MineOreEvent     (player, Ore.COAL));
@@ -66,7 +68,7 @@ public class Assignment {
         if (!hasItem(Item.REAL_GOLD_ITS_ALL_MINE))  throw new AssignmentFailed("The player is not a fool!");
         
         if (hasItem(Item.PARTY_HAT))                throw new AssignmentFailed("The player SHOULD NOT have a Party Hat!");
-
+        
         log("Construction LvL: ",   getLevel(Skill.CONSTRUCTION));
         log("Exploration LvL: ",    getLevel(Skill.EXPLORATION));
         log("Mining Lvl:",          getLevel(Skill.MINING));

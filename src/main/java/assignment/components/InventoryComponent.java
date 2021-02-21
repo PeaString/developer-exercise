@@ -50,6 +50,10 @@ public class InventoryComponent extends Component
 
 			inv.removeItem(item);
 		}
+        else
+        {
+            event.setCancelled(true); // No valid entry found to consume from.
+        }
     }
     
     private void onObtainItem(ObtainItemEvent event)
